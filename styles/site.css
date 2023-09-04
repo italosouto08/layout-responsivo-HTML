@@ -1,0 +1,173 @@
+* {
+  margin: 0px;
+  background-color: black;
+}
+
+header,
+main,
+footer {
+  color: green;
+  border: 2px solid green;
+  margin: 5px;
+  padding: 5px;
+}
+
+body {
+  display: grid;
+  height: 100vh;
+  grid-template-columns: 100%;
+  grid-template-rows: 100px 1fr 70px;
+  gap: 1px;
+}
+
+nav {
+  color: rgb(130, 130, 37);
+  border: 2px solid rgb(130, 130, 37);
+  width: 50%;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+main {
+  display: grid;
+  grid-template-columns: 1fr 30%;
+  grid-template-rows: 40px 1fr 50px;
+  grid-template-areas:
+    'h1 aside'
+    'section01 aside'
+    'section02 aside';
+  gap: 10px;
+}
+
+aside {
+  grid-area: aside;
+  border: 2px rgb(130, 130, 37);
+  color: rgb(130, 130, 37);
+}
+
+section01 {
+  grid-area: section-01;
+  border: 2px blue;
+  color: blue;
+}
+
+section02 {
+  grid-area: section-02;
+  border: 2px blue;
+  color: blue;
+}
+
+main > h1 {
+  grid-area: h1;
+}
+
+#section-01 {
+  border: 2px solid rgb(130, 130, 37);
+  color: rgb(130, 130, 37);
+}
+#section-02 {
+  border: 2px solid rgb(130, 130, 37);
+  color: rgb(130, 130, 37);
+}
+
+aside {
+  border: 2px solid rgb(130, 130, 37);
+  color: rgb(130, 130, 37);
+  padding: 10px;
+}
+
+aside section {
+  border: 2px solid blue;
+  color: blue;
+  height: 20%;
+  padding: 10px;
+  margin-top: 5px;
+}
+
+section article {
+  border: 2px solid blue;
+  color: blue;
+  padding: 10px;
+  margin: 5px;
+  height: 15%;
+}
+
+aside > h1 {
+  margin-bottom: 20px;
+}
+
+@media (max-width: 680px) {
+  main {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 40px 1fr 100px auto;
+    grid-template-areas:
+      'h1'
+      'section01'
+      'section02'
+      'aside';
+    gap: 10px;
+  }
+
+  aside {
+    display: flex;
+    flex-direction: column;
+    overflow: scroll;
+    overflow-y: hidden;
+    overflow-x: hidden;
+  }
+
+  aside > div {
+    display: flex;
+  }
+
+  aside {
+    border: 2px solid rgb(16, 102, 27);
+    color: rgb(16, 102, 27);
+    padding: 10px;
+  }
+
+  #section-01 {
+    border: 2px solid rgb(16, 102, 27);
+    color: rgb(16, 102, 27);
+  }
+  #section-02 {
+    border: 2px solid rgb(16, 102, 27);
+    color: rgb(16, 102, 27);
+  }
+
+  header,
+  main,
+  footer {
+    color: yellow;
+    border: 2px solid yellow;
+    margin: 5px;
+    padding: 5px;
+  }
+
+  aside section {
+    border: 2px solid orange;
+    color: orange;
+    height: 20%;
+    padding: 10px;
+    margin-top: 5px;
+  }
+
+  section article {
+    border: 2px solid orange;
+    color: orange;
+    padding: 10px;
+    margin: 5px;
+    height: 10%;
+  }
+
+  nav {
+    color: rgb(16, 102, 27);
+    border: 2px solid rgb(16, 102, 27);
+    width: 50%;
+  }
+}
